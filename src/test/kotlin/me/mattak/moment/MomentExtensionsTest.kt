@@ -17,16 +17,16 @@ public class MomentExtensionsTest {
 
     @Test
     fun _moment_stringDate() {
-        val m1 = moment("2015-01-01T00:00:00+0900")!!
+        val m1 = moment("2015-01-01T00:00:00+0900", timeZone = TimeZone.getTimeZone("Asia/Tokyo"))!!
         assertEquals("2015-01-01 00:00:00", m1.format("yyyy-MM-dd HH:mm:ss"))
 
-        val m2 = moment("2015-01-01 00:00:00+0900")!!
+        val m2 = moment("2015-01-01 00:00:00+0900", timeZone = TimeZone.getTimeZone("Asia/Tokyo"))!!
         assertEquals("2015-01-01 00:00:00", m2.format("yyyy-MM-dd HH:mm:ss"))
 
-        val m3 = moment("2015-01-01T00:00:00.000+0900")!!
+        val m3 = moment("2015-01-01T00:00:00.000+0900", timeZone = TimeZone.getTimeZone("Asia/Tokyo"))!!
         assertEquals("2015-01-01 00:00:00", m3.format("yyyy-MM-dd HH:mm:ss"))
 
-        val m4 = moment("2015-01-01 00:00:00.000+0900")!!
+        val m4 = moment("2015-01-01 00:00:00.000+0900", timeZone = TimeZone.getTimeZone("Asia/Tokyo"))!!
         assertEquals("2015-01-01 00:00:00", m4.format("yyyy-MM-dd HH:mm:ss"))
 
         val m5 = moment("2015-01-01T00:00:00")!!
@@ -110,7 +110,7 @@ public class MomentExtensionsTest {
                 "hour" to 12,
                 "minute" to 34,
                 "second" to 56
-        ))!!
+        ), timeZone = TimeZone.getTimeZone("UTC"))!!
         assertEquals(2015, moment.year)
         assertEquals(1, moment.month)
         assertEquals(1, moment.day)

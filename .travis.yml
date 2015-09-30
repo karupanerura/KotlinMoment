@@ -1,5 +1,5 @@
 language: java
-install: ./gradlew check
+install: ./gradlew check --info --stacktrace
 jdk:
     - oraclejdk8
     - oraclejdk7
